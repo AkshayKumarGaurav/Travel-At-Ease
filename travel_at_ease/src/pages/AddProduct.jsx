@@ -19,13 +19,18 @@ import {
 import { useState } from "react";
 import { addProduct } from "../redux/productReducer/action";
 
+// "image": "https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?ca=6&ce=1&s=1024x768",
+//       "title": "Haymarket Hotel, Firmdale Hotels",
+//       "price": "842",
+//       "people": "4",
+//       "discount": "15"
+
 const initialState = {
   image: "",
   title: "",
   price: "",
-  brand: "",
+  people: "",
   discount: "",
-  gender: "",
 };
 
 export const AddProduct = () => {
@@ -62,10 +67,10 @@ export const AddProduct = () => {
           <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
             <Stack align={"center"}>
               <Heading fontSize={"4xl"}>Add Your Product</Heading>
-              <Text fontSize={"lg"} color={"gray.600"}>
+              {/* <Text fontSize={"lg"} color={"gray.600"}>
                 to enjoy all of our cool{" "}
                 <Link color={"blue.400"}>features</Link> ✌️
-              </Text>
+              </Text> */}
             </Stack>
             <Box
               rounded={"lg"}
@@ -111,33 +116,22 @@ export const AddProduct = () => {
                   />
                 </FormControl>
                 <FormControl id="password">
-                  <FormLabel>Product Brand</FormLabel>
+                  <FormLabel>Product People</FormLabel>
                   <Input
-                    type="text"
-                    name="brand"
-                    value={product.brand}
+                    type="number"
+                    name="people"
+                    value={product.people}
                     onChange={(e) => {
                       handleChange(e);
                     }}
-                    placeholder="Brand"
+                    placeholder="people"
                   />
                 </FormControl>
-                <Select
-                  placeholder="Select gender"
-                  name="gender"
-                  id=""
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
-                >
-                  <option value="male">men</option>
-                  <option value="female">female</option>
-                  <option value="kids">kids</option>
-                </Select>
+               
                 <FormControl id="password">
                   <FormLabel>Product Discount</FormLabel>
                   <Input
-                    type="text"
+                    type="number"
                     name="discount"
                     value={product.discount}
                     onChange={(e) => {

@@ -16,7 +16,7 @@ import { ADD_PRODUCT_SUCCESS, PRODUCT_FAILURE, PRODUCT_REQUEST } from "./actionT
 export const addProduct = (data) => (dispatch) => {
   dispatch({ type: PRODUCT_REQUEST });
   axios
-    .post("http://localhost:8080/products", data)
+    .post("http://localhost:8080/hotels", data)
     .then((res) => {
       dispatch({ type: ADD_PRODUCT_SUCCESS });
     })

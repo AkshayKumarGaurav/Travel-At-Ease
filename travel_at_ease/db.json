@@ -1,184 +1,20 @@
 {
-  "products": [
+  "hotels": [
     {
       "id": 1,
-      "image": "https://static.zara.net/photos///2023/V/0/1/p/5584/461/802/2/w/375/5584461802_15_1_1.jpg?ts=1675791650061",
-      "title": "men's grey formal t-shirt",
-      "price": "699",
-      "brand": "Nike",
-      "discount": "15",
-      "gender": "male"
+      "image": "https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?ca=6&ce=1&s=1024x768",
+      "title": "Haymarket Hotel, Firmdale Hotels",
+      "price": "842",
+      "people": "4",
+      "discount": "15"
     },
     {
-      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=80",
-      "title": "sport shoe",
-      "price": 5999,
-      "brand": "Nike",
-      "discount": "15",
-      "gender": "male",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/22/25/ce/ea/kingsford-hotel-manila.jpg",
+      "title": "London Marriott Hotel County Hall",
+      "price": "1258",
+      "people": "2",
+      "discount": "40",
       "id": 2
-    },
-    {
-      "image": "https://images.pexels.com/photos/3819969/pexels-photo-3819969.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "title": "Coco",
-      "price": 120,
-      "brand": "coco",
-      "discount": "5",
-      "gender": "kids",
-      "id": 3
-    },
-    {
-      "image": "https://images.pexels.com/photos/3965557/pexels-photo-3965557.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "title": "Suit",
-      "price": 7999,
-      "brand": "cloth",
-      "discount": "15",
-      "gender": "female",
-      "id": 4
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1516257984-b1b4d707412e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWVucyUyMGZhc2hpb258ZW58MHx8MHx8&w=1000&q=80",
-      "title": "jacket",
-      "price": 1599,
-      "brand": "zara",
-      "discount": "10",
-      "gender": "male",
-      "id": 5
-    },
-    {
-      "image": "https://www.kosha.co/journal/wp-content/uploads/2022/07/winter-jacket-for-men.jpeg",
-      "title": "men jacket",
-      "price": 1589,
-      "brand": "zara",
-      "discount": "10",
-      "gender": "",
-      "id": 6
-    },
-    {
-      "image": "https://media.gettyimages.com/id/172263787/photo/lettermans-jacket.jpg?s=612x612&w=gi&k=20&c=Ziq1F3MW4Ha1oHgcMVcHYK9K_0GsYpxWXxGPgZFiTss=",
-      "title": "Men jacket",
-      "price": 2999,
-      "brand": "zara",
-      "discount": "15",
-      "gender": "male",
-      "id": 7
-    },
-    {
-      "image": "https://cdn.shopify.com/s/files/1/0752/6435/products/IMG_0055_aacdad05-1d72-4a19-9874-84caad561d72.jpg?v=1655888040",
-      "title": "T-shirt",
-      "price": 599,
-      "brand": "zara",
-      "discount": "5",
-      "gender": "male",
-      "id": 8
-    },
-    {
-      "image": "https://contents.mediadecathlon.com/p2030013/21bc83edba1413f905914292436ad434/p2030013.jpg",
-      "title": "men's white t-shirt",
-      "price": 452,
-      "brand": "zara",
-      "discount": "5",
-      "gender": "male",
-      "id": 9
-    },
-    {
-      "image": "https://cdn.shopify.com/s/files/1/0600/3313/8864/products/FRONT_480x480.jpg?v=1674664972",
-      "title": "men's Black t-shirt",
-      "price": 453,
-      "brand": "zara",
-      "discount": "5",
-      "gender": "male",
-      "id": 10
-    },
-    {
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfssW_K5TUqT2zCPjaRyy5J7c2g1Wt1xOImA&usqp=CAU",
-      "title": "men's summer t-shirt",
-      "price": "489",
-      "brand": "zara",
-      "discount": "10",
-      "gender": "",
-      "id": 11
-    },
-    {
-      "image": "https://cdn.shopify.com/s/files/1/0012/8935/5319/products/MSHCT1063RLMainmage.jpg?v=1633752607",
-      "title": "men's black t-shirt",
-      "price": 456,
-      "brand": "zara",
-      "discount": "5",
-      "gender": "male",
-      "id": 12
-    },
-    {
-      "image": "https://images.meesho.com/images/products/130849504/fwe2y_512.jpg",
-      "title": "men's blue t-shirt",
-      "price": 6966,
-      "brand": "zara",
-      "discount": "5",
-      "gender": "male",
-      "id": 13
-    },
-    {
-      "image": "https://cdn.shopify.com/s/files/1/0258/2485/4100/products/Flatheads-SurvivorTee-Men-Model-Front_1080x1440.jpg?v=1673350669",
-      "title": "men's black t-shirt",
-      "price": 699,
-      "brand": "zara",
-      "discount": "5",
-      "gender": "male",
-      "id": 14
-    },
-    {
-      "image": "https://5.imimg.com/data5/BJ/YG/MY-8010555/mens-t-shirts-500x500.jpg",
-      "title": "men's combo t-shirt",
-      "price": "6999",
-      "brand": "zara",
-      "discount": "5",
-      "gender": "male",
-      "id": 15
-    },
-    {
-      "image": "https://cdn.shopify.com/s/files/1/2360/8505/products/round-neck-casual-mens-t-shirt_394x.jpg?v=1601177758",
-      "title": "men's casual t-shirt",
-      "price": 699,
-      "brand": "zara",
-      "discount": "5",
-      "gender": "male",
-      "id": 16
-    },
-    {
-      "image": "https://cdn.shopify.com/s/files/1/0249/4110/1152/products/TS-078_PO3_OML.jpg?v=1623061981",
-      "title": "men's combo casual t-shirt",
-      "price": 899,
-      "brand": "zara",
-      "discount": "5",
-      "gender": "male",
-      "id": 17
-    },
-    {
-      "image": "https://images.bewakoof.com/t640/men-s-blue-the-traveller-t-shirt-287588-1655748288-1.jpg",
-      "title": "men's blue casual t-shirt",
-      "price": 799,
-      "brand": "zara",
-      "discount": "5",
-      "gender": "male",
-      "id": 18
-    },
-    {
-      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/cef1524d-2ea0-4af9-b38f-02a60eb97b56/jordan-23-engineered-t-shirt-0pGFqG.png",
-      "title": "men's white casual t-shirt",
-      "price": 799,
-      "brand": "zara",
-      "discount": "5",
-      "gender": "male",
-      "id": 19
-    },
-    {
-      "image": "https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/Search/224x336/620626.jpg",
-      "title": "Men T-shirt",
-      "price": "899",
-      "brand": "Nike-Nike",
-      "discount": "15",
-      "gender": "male",
-      "id": 20
     }
   ]
 }
