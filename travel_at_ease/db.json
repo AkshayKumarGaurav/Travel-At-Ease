@@ -1,0 +1,20 @@
+{
+  "hotels": [
+    {
+      "id": 1,
+      "image": "https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?ca=6&ce=1&s=1024x768",
+      "title": "Haymarket Hotel, Firmdale Hotels",
+      "price": "842",
+      "people": "4",
+      "discount": "15"
+    },
+    {
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/22/25/ce/ea/kingsford-hotel-manila.jpg",
+      "title": "London Marriott Hotel County Hall",
+      "price": "1258",
+      "people": "2",
+      "discount": "40",
+      "id": 2
+    }
+  ]
+}
