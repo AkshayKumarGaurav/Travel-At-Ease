@@ -1,8 +1,8 @@
 /** @format */
 
-import { HomePage } from './pages/Homepage';
+
 import { Navbar } from './components/Navbar';
-import Footer from './components/Footer';
+import { MainRoutes } from './components/MainRoutes';
 
 function App() {
   return (
