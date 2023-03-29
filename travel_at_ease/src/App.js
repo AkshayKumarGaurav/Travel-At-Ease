@@ -1,14 +1,15 @@
+/** @format */
 
-
-import { MainRoutes } from './components/MainRoutes';
+import { HomePage } from './pages/Homepage';
 import { Navbar } from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <>
-     <Navbar />
-      <MainRoutes/>
-    </>
+    <div>
+      <Navbar />
+      <MainRoutes />
+    </div>
   );
 }
 

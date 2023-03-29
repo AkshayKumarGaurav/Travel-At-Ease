@@ -13,7 +13,7 @@ export const Car = () => {
           <Input
             borderRadius="2px"
             outline="1px solid rgb(82, 81, 81)"
-            placeholder="Enter your destination"
+            placeholder="Going to"
             size="lg"
             width="500px"
           />
@@ -21,7 +21,7 @@ export const Car = () => {
           <Input
             className="checkin"
             type="date"
-            placeholder="check in"
+            placeholder="Check in"
             size="lg"
             width="200px"
             borderRadius="2px"
@@ -32,7 +32,7 @@ export const Car = () => {
             borderRadius="2px"
             outline="1px solid rgb(82, 81, 81)"
             type="date"
-            placeholder="check out"
+            placeholder="Check out"
             size="lg"
             width="200px"
             padding="4px"
@@ -45,9 +45,10 @@ export const Car = () => {
             border="1px solid #6b646b"
             borderRadius="4px"
           >
-            <span style={{ fontSize: "22px" }} className="material-icons">
-              group
-            </span>
+            <span
+              style={{ fontSize: "22px" }}
+              className="material-icons"
+            ></span>
             <Box paddingLeft="10px">
               <p style={{ fontSize: "12px" }}>Travelers</p>
               <p>1 Room, 2 Travelers</p>
@@ -56,16 +57,16 @@ export const Car = () => {
         </label>
         <br />
         <Stack spacing={[1, 5]} direction={["column", "row"]}>
-          <Checkbox size="lg" colorScheme="teal" defaultChecked>
+          <Checkbox size="lg" colorScheme="teal">
             Add a flight
           </Checkbox>
-          <Checkbox size="lg" colorScheme="teal" defaultChecked>
+          <Checkbox size="lg" colorScheme="teal">
             Add a car
           </Checkbox>
         </Stack>
         <br />
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Link to="/Hotels">
+          <Link to="#">
             <Button colorScheme="red" variant="solid">
               Search
             </Button>
