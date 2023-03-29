@@ -1,12 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
-import { AddProduct } from './pages/AddProduct';
+import { Navbar } from './components/Navbar';
+import { Second } from './components/Second';
+import { Featuredoffers } from './components/FeaturedOffers';
+import Options from './components/Options';
+
 
 function App() {
   return (
-    <div className="App">
-      <AddProduct />
-    </div>
+    <>
+      <Navbar />
+      <Second />
+      <Featuredoffers />
+      <Options />
+      
+    </>
   );
 }
 
