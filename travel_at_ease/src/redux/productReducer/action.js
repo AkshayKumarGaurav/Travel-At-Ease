@@ -1,11 +1,4 @@
-// import axios from "axios";
-// import {
-//   ADD_PRODUCT_SUCCESS,
-//   GET_PRODUCT_SUCCESS,
-//   PATCH_PRODUCT_SUCCESS,
-//   PRODUCT_FAILURE,
-//   PRODUCT_REQUEST,
-// } from "./actionTypes";
+
 import axios from "axios"
 
 import { ADD_PRODUCT_SUCCESS, PRODUCT_FAILURE, PRODUCT_REQUEST } from "./actionType";
