@@ -3,6 +3,7 @@ import { First } from "../components/First";
 import { Second } from "../components/Second";
 import { Featuredoffers } from "../components/FeaturedOffers";
 import Options from "../components/Options";
+import Reward from "../components/Reward";
 
 export const HomePage = () => {
   return (
@@ -11,6 +12,9 @@ export const HomePage = () => {
       <Second />
       <Featuredoffers />
       <Options />
+      <br />
+      <br />
+      <Reward />
     </div>
   );
 };
