@@ -1,19 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import { Navbar } from './components/Navbar';
-import { Second } from './components/Second';
-import { Featuredoffers } from './components/FeaturedOffers';
-import Options from './components/Options';
 
+import { HomePage } from './pages/Homepage';
+import { Navbar } from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Second />
-      <Featuredoffers />
-      <Options />
-      
+     <Navbar />
+     <HomePage />
+     <Footer />
     </>
   );
 }
