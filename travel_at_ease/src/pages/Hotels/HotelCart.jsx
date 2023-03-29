@@ -32,7 +32,7 @@ export const HotelCart = ({
           <Text>include: AC,WIFI,{include}</Text>
           <Text color={'green'}>rating: {rating}</Text>
           <Text color={'green'}>service: {service}</Text>
-          <Text >id: {id}</Text>
+          {/* <Text >id: {id}</Text> */}
        </Box>
        <Box >
         <br /><br />

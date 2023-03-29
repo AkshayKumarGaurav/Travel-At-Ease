@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Checkbox, flexbox, Input, Stack } from "@chakra-ui/react";
 import "./stay.css";
 import { Flex, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 export const Stay = () => {
+let [place,setPlace]=useState('')
+
+let handleChange=(e)=>{
+  setPlace(e.target.value)
+};
+
+let handleSearch=()=>{
+  console.log(place)
+}
+
   return (
     <>
       <br />
       <div>
         <label style={{ display: "flex", gap: "20px" }}>
           <Input
+          onChange={handleChange}
             borderRadius="2px"
             outline="1px solid rgb(82, 81, 81)"
             placeholder="Going to"
@@ -65,8 +76,8 @@ export const Stay = () => {
         </Stack>
         <br />
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Link to="/Hotels">
-            <Button colorScheme="red" variant="solid">
+          <Link to="/hotels">
+            <Button onClick={handleSearch} colorScheme="red" variant="solid">
               Search
             </Button>
           </Link>
