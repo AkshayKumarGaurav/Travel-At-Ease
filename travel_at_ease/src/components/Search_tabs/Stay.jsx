@@ -65,7 +65,7 @@ export const Stay = () => {
         </Stack>
         <br />
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Link to="/Hotels">
+          <Link to="#">
             <Button colorScheme="red" variant="solid">
               Search
             </Button>

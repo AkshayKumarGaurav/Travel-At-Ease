@@ -14,7 +14,7 @@
 }
 
 .Navbar>div:first-child{
-    padding-left: 130px;
+    padding-left: 100px;
 }
 
 
@@ -32,6 +32,7 @@
 .SiteLogo{
     height: 70%;
     width: 190px;
+    margin-right: 20px;
 }
 
 @media all and (min-width:0px) and (max-width:800px){
