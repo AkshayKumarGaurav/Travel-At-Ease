@@ -1,9 +1,9 @@
 .home {
-    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/01/ORB_Storefront_6_imgB_1400x600_20211028.jpg?impolicy=fcrop&w=900&h=506&q=mediumHigh");
+    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/01/ORB_Storefront_6_imgB_1400x600_20211028.jpg");
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
-    height: 530px;
+    height: 480px;
     position: relative;
   }
   .bot {
@@ -46,7 +46,7 @@
     left: 140;
     width: 80%;
     margin: auto;
-    height: 330px;
+    height: 260px;
     border-radius: 1px;
     padding:0px 8px ;
     background-color:white ;

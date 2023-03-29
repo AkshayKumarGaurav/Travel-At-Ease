@@ -16,7 +16,7 @@ export const Navbar = () => {
         </Link>
         <div style={{ display: "flex" }}>
           <h4>More travel</h4>
-          <span class="material-icons" style={{ color: "white" }}>
+          <span className="material-icons" style={{ color: "white" }}>
             expand_more
           </span>
         </div>
@@ -35,7 +35,7 @@ export const Navbar = () => {
           <h4>Trips</h4>
         </div>
         <div>
-          <h4>Sign in</h4>
+          <h4>Sign In</h4>
         </div>
       </div>
     </div>
