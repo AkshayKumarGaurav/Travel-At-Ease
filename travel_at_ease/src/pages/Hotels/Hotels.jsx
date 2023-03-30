@@ -18,7 +18,7 @@ export const Hotels = () => {
     dispatch(getHotels);
   }, []);
 
-  return (
+  return isLoading?<Heading>Loading....</Heading>: (
     <div>
         <Heading>Stays</Heading>
       <HotelList hotels={hotels} />

@@ -116,7 +116,8 @@ export const Navbar = () => {
                     >
                       Things to do
                     </Button>
-                    <Button
+                   <Link to='/hotels'>
+                   <Button
                       w="194px"
                       variant="ghost"
                       // leftIcon={<BsChatSquareQuote />}
@@ -126,6 +127,7 @@ export const Navbar = () => {
                     >
                       Deals
                     </Button>
+                   </Link>
                     <Button
                       w="194px"
                       variant="ghost"

@@ -2,6 +2,7 @@
 
 import { Box, Flex, Heading, Spacer, Text } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const HotelCart = ({
   image,
@@ -19,7 +20,7 @@ export const HotelCart = ({
     <Box m="4">
       <Flex>
         <Box mr="3">
-          <img width={"300px"} src={image} />
+          <Link to={`/hotels/${id}`}><img width={"300px"} src={image} /></Link>
         </Box>
         {/* <Spacer /> */}
         <Box >
