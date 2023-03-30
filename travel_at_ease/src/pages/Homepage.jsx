@@ -1,9 +1,9 @@
 import React from "react";
-import { First } from "../components/First";
-import { Second } from "../components/Second";
-import { Featuredoffers } from "../components/FeaturedOffers";
-import Options from "../components/Options";
-import Reward from "../components/Reward";
+import { First } from "../Components/First";
+import { Second } from "../Components/Second";
+import { Featuredoffers } from "../Components/FeaturedOffers";
+import Options from "../Components/Options";
+import Reward from "../Components/Reward";
 
 export const HomePage = () => {
   return (

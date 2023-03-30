@@ -1,6 +1,7 @@
 
 import "./stay.css";
-import { Flex, Box } from "@chakra-ui/react";
+import { useState } from "react";
+import { Flex, Box, Input, Checkbox, Stack, Button } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getHotels } from "../../redux/Hotels/action";

@@ -1,8 +1,8 @@
 /** @format */
 
 
-import { Navbar } from './components/Navbar';
-import { MainRoutes } from './components/MainRoutes';
+import { Navbar } from './Components/Navbar';
+import { MainRoutes } from './Components/MainRoutes';
 
 function App() {
   return (
