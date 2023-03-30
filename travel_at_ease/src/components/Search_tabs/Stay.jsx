@@ -1,5 +1,12 @@
 import React from "react";
-import { Button, Checkbox, flexbox, Input, Stack } from "@chakra-ui/react";
+import {
+  Button,
+  Checkbox,
+  flexbox,
+  Input,
+  Stack,
+  Option,
+} from "@chakra-ui/react";
 import "./stay.css";
 import { Flex, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
@@ -50,7 +57,22 @@ export const Stay = () => {
             </span>
             <Box paddingLeft="10px">
               <p style={{ fontSize: "12px" }}>Travelers</p>
-              <p>1 room, 2 travelers</p>
+              <select name="Travelers" id="travelers">
+                <option>Adults</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <select name="Travelers" id="travelers">
+                <option>Rooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
             </Box>
           </Flex>
         </label>
