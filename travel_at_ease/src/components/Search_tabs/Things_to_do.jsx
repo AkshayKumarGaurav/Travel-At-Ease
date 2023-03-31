@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Checkbox, flexbox, Input, Stack } from "@chakra-ui/react";
 import "./stay.css";
 import { Flex, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 export const Things_to_do = () => {
+  const [city,setCity]= useState("")
+
   return (
     <>
       <br />
@@ -15,6 +17,7 @@ export const Things_to_do = () => {
             placeholder="Things to do in"
             size="lg"
             width="600px"
+            onChange={(e)=>setCity(e.target.value)}
           />
 
           <Input
@@ -42,11 +45,12 @@ export const Things_to_do = () => {
 
         <br />
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Link to="#">
-            <Button colorScheme="red" variant="solid">
-              Search
+         
+            <Button colorScheme="red" variant="solid" >
+            <Link to={{ pathname: '/things_to_do', search: `?city=${city}`}}> Search</Link>
+             
             </Button>
-          </Link>
+          
         </div>
       </div>
     </>
