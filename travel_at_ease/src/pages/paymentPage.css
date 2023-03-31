@@ -1,0 +1,16 @@
+#formInput{
+    border-radius: 20px;
+}
+
+#formInput input{
+    width: 400px;
+    border-radius: 10px;
+    height: 40px;
+}
+#formInput button{
+    width: 300px;
+    background-color: green;
+    color: white;
+    height: 40px;
+    border-radius: 10px;
+}
