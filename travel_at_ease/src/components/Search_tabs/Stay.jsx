@@ -1,4 +1,3 @@
-
 import "./stay.css";
 import { useState } from "react";
 import { Flex, Box, Input, Checkbox, Stack, Button } from "@chakra-ui/react";
@@ -9,14 +8,14 @@ import { TOTAL_DAYS } from "../../redux/Hotels/actionType";
 
 export const Stay = () => {
   let [place, setPlace] = useState("");
-  let [day1,setDay1]=useState(0);
-  let [day2,setDay2]=useState(0);
+  let [day1, setDay1] = useState(0);
+  let [day2, setDay2] = useState(0);
 
   let handleChange = (e) => {
     setPlace(e.target.value);
   };
-  let dispatch=useDispatch();
-   let navigate=useNavigate()
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
 
   let handleSearch = () => {
     let obj = {
@@ -24,15 +23,15 @@ export const Stay = () => {
         q: place,
       },
     };
-dispatch(getHotels(obj))
-    navigate('/hotels')
-    
-    let d1=new Date(day1)
-    let d2=new Date(day2);
-    let time=Math.abs(d2-d1);
-    let days=Math.ceil(time / (1000*60*60*24))
-    dispatch({type:TOTAL_DAYS,payload:days})
-    console.log(days)
+    dispatch(getHotels(obj));
+    navigate("/hotels");
+
+    let d1 = new Date(day1);
+    let d2 = new Date(day2);
+    let time = Math.abs(d2 - d1);
+    let days = Math.ceil(time / (1000 * 60 * 60 * 24));
+    dispatch({ type: TOTAL_DAYS, payload: days });
+    console.log(days);
   };
 
   return (
@@ -47,10 +46,11 @@ dispatch(getHotels(obj))
             placeholder="Going to"
             size="lg"
             width="500px"
+            required
           />
 
           <Input
-          onChange={(e)=>setDay1(e.target.value)}
+            onChange={(e) => setDay1(e.target.value)}
             className="checkin"
             type="date"
             placeholder="Check in"
@@ -61,7 +61,7 @@ dispatch(getHotels(obj))
             padding="4px"
           />
           <Input
-          onChange={(e)=>setDay2(e.target.value)}
+            onChange={(e) => setDay2(e.target.value)}
             borderRadius="2px"
             outline="1px solid rgb(82, 81, 81)"
             type="date"
