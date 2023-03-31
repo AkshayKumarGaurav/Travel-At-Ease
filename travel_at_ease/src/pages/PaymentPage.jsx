@@ -1,10 +1,34 @@
 /** @format */
-
-import { Box, Button, Flex, FormControl, Heading, Input, Text } from "@chakra-ui/react";
-import React from "react";
+import "./paymentPage.css";
+import { Spinner } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  FormControl,
+  Heading,
+  Text,
+} from "@chakra-ui/react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+let obj = {
+  name: "",
+  cardNnumber: "",
+  expiryDate: "",
+  cvv: "",
+  amount: "",
+  email: "",
+};
 
 export const PaymentPage = () => {
+  let [input, setInput] = useState(obj);
+  let [spin, setSpin] = useState(false);
+  let [summit, setSummit] = useState(false);
+
+  let navigate = useNavigate();
+
   const { isLoading, isError, hotels, price, days } = useSelector(
     (store) => store.hotelsReducer
   );
@@ -12,11 +36,23 @@ export const PaymentPage = () => {
   let resortFee = days * 199;
   let totalFee = price * days + texes + resortFee;
 
-  //form data//
-  let handleSubmit=()=>{
-   
-console.log('Payment SuccessFull')
-  }
+  let handleChange = (e) => {
+    let { name, value } = e.target;
+    setInput({ ...input, [name]: value });
+  };
+  let handleSubmit = (e) => {
+    e.preventDefault();
+    setInput(obj);
+    setSpin(true);
+    setTimeout(() => {
+      setSpin(false);
+      setSummit(true);
+    }, 2000);
+
+    setTimeout(() => {
+      navigate("/");
+    }, 3000);
+  };
 
   return (
     <Box marginLeft={"80px"}>
@@ -49,63 +85,104 @@ console.log('Payment SuccessFull')
             <Text color={"green"}>
               UPI | PayPal | Monthly Payment | Click-to-Pay
             </Text>
-            <br />
-            <Box>
-               {/******* *payment form start******* */}
-              <Box >
-                <label>
-                  Name on Card*{" "}
-                  <Input type={"text"} border={"1px solid black"}></Input>
-                </label>
-                <label>
-                  Debit/Credit card number*{" "}
-                  <Input type={"number"} border={"1px solid black"}></Input>
-                </label>
-                <Flex>
-                  <Box>
-                    <Text>Expiration date*</Text>
-                    <Input
-                      marginRight="70px"
-                      width={"100px"}
-                      type={"month"}
-                      border={"1px solid black"}
-                    ></Input>
-                    <Text>Security code*</Text>
 
-                    <Input
-                      marginRight="70px"
-                      width={"100px"}
-                      type={"number"}
-                      border={"1px solid black"}
-                    ></Input>
-                  </Box>
-                  <Box>
-                    <Text>Email Id*</Text>
-                    <Input
-                      marginRight="70px"
-                      width={"300px"}
-                      type={"email"}
-                      border={"1px solid black"}
-                    ></Input>
-                    <Text>Mobile no*</Text>
-                    <Input
-                      marginRight="70px"
-                      width={"300px"}
-                      type={"number"}
-                      border={"1px solid black"}
-                    ></Input>
-                  </Box>
-                </Flex>
-                <Button
-                  margin={"20px"}
-                  width={"300px"}
-                  bg={"green"}
-                  color="white"
-                  onClick={handleSubmit}
-                >submit</Button>
-              </Box>
-              {/******* *payment form end******* */}
-            </Box>
+            <br />
+            {/* form is started for payment  */}
+            <div
+              id="formInput"
+              style={{
+                background: "#9FA8DA",
+                textAlign: "center",
+                padding: "25px",
+              }}
+            >
+              {spin && (
+                <Spinner
+                  thickness="4px"
+                  speed="0.65s"
+                  emptyColor="gray.200"
+                  color="red.500"
+                  size="xl"
+                />
+              )}
+              {summit && <Heading color={"green"}>Submited successful</Heading>}
+              <form onSubmit={handleSubmit}>
+                <label for="name">Name on Card:</label>
+                <br />
+                <input
+                  required
+                  onChange={handleChange}
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={input.name}
+                />
+                <br />
+
+                <label for="card-number">Card Number:</label>
+                <br />
+                <input
+                  required
+                  onChange={handleChange}
+                  type="number"
+                  id="card-number"
+                  name="cardNnumber"
+                  value={input.cardNnumber}
+                />
+                <br />
+
+                <label for="expiry-date">Expiry Date:</label>
+                <br />
+                <input
+                  required
+                  onChange={handleChange}
+                  type="month"
+                  id="expiry-date"
+                  name="expiryDate"
+                  value={input.expiryDate}
+                />
+                <br />
+
+                <label for="cvv">CVV:</label>
+                <br />
+                <input
+                  required
+                  onChange={handleChange}
+                  type="number"
+                  id="cvv"
+                  name="cvv"
+                  value={input.cvv}
+                />
+                <br />
+
+                <label for="amount">Amount:</label>
+                <br />
+                <input
+                  required
+                  onChange={handleChange}
+                  type="number"
+                  id="amount"
+                  name="amount"
+                  value={input.amount}
+                />
+                <br />
+
+                <label for="email">Email</label>
+                <br />
+                <input
+                  required
+                  onChange={handleChange}
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={input.email}
+                />
+                <br />
+                <br />
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+            {/* form is ended */}
           </Box>
         </Box>
         <Box height={"600px"} bg="#221286" margin={"20px"}>
