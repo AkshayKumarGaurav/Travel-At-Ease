@@ -4,37 +4,18 @@ import React, { useState } from "react";
 import { Button, Checkbox, flexbox, Input, Stack } from "@chakra-ui/react";
 import "./stay.css";
 import { Flex, Box } from "@chakra-ui/react";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { getHotels } from "../../redux/Hotels/action";
-import { TOTAL_DAYS } from "../../redux/Hotels/actionType";
+import { Link } from "react-router-dom";
 
 export const Stay = () => {
   let [place, setPlace] = useState("");
-  let [day1,setDay1]=useState(0);
-  let [day2,setDay2]=useState(0);
 
   let handleChange = (e) => {
     setPlace(e.target.value);
   };
-  let dispatch=useDispatch();
-   let navigate=useNavigate()
 
   let handleSearch = () => {
-    let obj = {
-      params: {
-        q: place,
-      },
-    };
-dispatch(getHotels(obj))
-    navigate('/hotels')
-    
-    let d1=new Date(day1)
-    let d2=new Date(day2);
-    let time=Math.abs(d2-d1);
-    let days=Math.ceil(time / (1000*60*60*24))
-    dispatch({type:TOTAL_DAYS,payload:days})
-    console.log(days)
+    console.log(place);
+    console.log('abc')
   };
 
   return (
@@ -52,7 +33,6 @@ dispatch(getHotels(obj))
           />
 
           <Input
-          onChange={(e)=>setDay1(e.target.value)}
             className="checkin"
             type="date"
             placeholder="Check in"
@@ -63,7 +43,6 @@ dispatch(getHotels(obj))
             padding="4px"
           />
           <Input
-          onChange={(e)=>setDay2(e.target.value)}
             borderRadius="2px"
             outline="1px solid rgb(82, 81, 81)"
             type="date"
@@ -100,8 +79,8 @@ dispatch(getHotels(obj))
         </Stack>
         <br />
         <div style={{ display: "flex", justifyContent: "center" }}>
-          {/* <Button onClick={handleSearch} colorScheme="red" variant="solid" /> */}
-          <Button onClick={handleSearch} colorScheme="red" variant="solid">
+          <Button onClick={handleSearch} colorScheme="red" variant="solid" />
+          <Button colorScheme="red" variant="solid">
             Search
           </Button>
         </div>
