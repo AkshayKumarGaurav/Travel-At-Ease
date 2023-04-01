@@ -2,8 +2,9 @@ import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useToast } from "@chakra-ui/react";
-// import logo from "../Images/TravelAtEase.png";
 import { useAuth0 } from "@auth0/auth0-react";
+import logo from "../Images/logo2.png";
+
 import {
   Popover,
   PopoverTrigger,
@@ -28,8 +29,11 @@ export const Navbar = () => {
     <div className="Navbar">
       <div style={{ marginTop: "1%" }}>
         <Link to="/">
-          <div className="SiteLogo">
-            <img src="" alt="Logo" />
+
+         
+          <div className="SiteLogo" >
+            <img src={logo} alt="Logo" />
+
           </div>
         </Link>
         <div
@@ -37,7 +41,7 @@ export const Navbar = () => {
             display: "flex",
             alignItems: "center",
             marginBottom: "14px",
-            marginLeft: "10px",
+            marginLeft: "-58px",
             background: "#00253c",
             color: "#00253c",
           }}

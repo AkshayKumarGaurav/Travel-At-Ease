@@ -2,7 +2,7 @@
 .Navbar{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    height: 70px;
+    height: 100px;
     background-color:#00253c;
     justify-content: space-around;
     padding: 0%;
@@ -30,9 +30,10 @@
 
 
 .SiteLogo{
-    height: 70%;
-    width: 190px;
-    margin-right: 20px;
+    height: 20%;
+    width: 48%;
+    margin: 0%;
+    
 }
 
 @media all and (min-width:0px) and (max-width:800px){
