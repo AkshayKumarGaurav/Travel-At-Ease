@@ -27,7 +27,7 @@ export const Hotels = () => {
         emptyColor="gray.200"
         color="blue.500"
         size="xl"
-        transform=" translate(-50%, -50%)"
+        // transform=" translate(-50%, -50%)"
         position="fixed"
         z-index=" 1000"
         left="50%"

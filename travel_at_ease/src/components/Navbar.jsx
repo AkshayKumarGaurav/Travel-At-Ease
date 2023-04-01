@@ -2,7 +2,9 @@ import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useToast } from "@chakra-ui/react";
+import { useAuth0 } from "@auth0/auth0-react";
 import logo from "../Images/logo2.png";
+
 import {
   Popover,
   PopoverTrigger,
@@ -14,18 +16,24 @@ import {
   Stack,
   Flex,
 } from "@chakra-ui/react";
-
-import { BsThreeDotsVertical, BsChatSquareQuote } from "react-icons/bs";
-import { RiShutDownLine, RiRestartLine, RiFileShredLine } from "react-icons/ri";
+import LogoutButton from "./Logout";
+import LoginButton from "./Login";
 
 export const Navbar = () => {
+  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
+
+  console.log("isAuthenticated", isAuthenticated);
+
   const toast = useToast();
   return (
     <div className="Navbar">
-      <div>
+      <div style={{ marginTop: "1%" }}>
         <Link to="/">
+
+         
           <div className="SiteLogo" >
             <img src={logo} alt="Logo" />
+
           </div>
         </Link>
         <div
@@ -116,18 +124,18 @@ export const Navbar = () => {
                     >
                       Things to do
                     </Button>
-                   <Link to='/hotels'>
-                   <Button
-                      w="194px"
-                      variant="ghost"
-                      // leftIcon={<BsChatSquareQuote />}
-                      justifyContent="flex-start"
-                      fontWeight="normal"
-                      fontSize="sm"
-                    >
-                      Deals
-                    </Button>
-                   </Link>
+                    <Link to="/hotels">
+                      <Button
+                        w="194px"
+                        variant="ghost"
+                        // leftIcon={<BsChatSquareQuote />}
+                        justifyContent="flex-start"
+                        fontWeight="normal"
+                        fontSize="sm"
+                      >
+                        Deals
+                      </Button>
+                    </Link>
                     <Button
                       w="194px"
                       variant="ghost"
@@ -156,10 +164,7 @@ export const Navbar = () => {
           );
         </div>
       </div>
-      <div>
-        <div>
-          <h4>English</h4>
-        </div>
+      <div style={{ marginTop: "1%", marginLeft: "2%" }}>
         <div>
           <h4>List your property</h4>
         </div>
@@ -169,9 +174,10 @@ export const Navbar = () => {
         <div>
           <h4>Trips</h4>
         </div>
-        <div>
-          <h4>Sign In</h4>
+        <div style={{ marginLeft: "20px" }}>
+          {isAuthenticated ? <LogoutButton /> : <LoginButton />}
         </div>
+        <div>{isAuthenticated && <h4>Welcome, {user.name}</h4>}</div>
       </div>
     </div>
   );
