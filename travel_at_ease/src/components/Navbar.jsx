@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useToast } from "@chakra-ui/react";
 import { useAuth0 } from "@auth0/auth0-react";
 import logo from "../Images/logo2.png";
+import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
 
 import {
   Popover,
@@ -16,8 +18,6 @@ import {
   Stack,
   Flex,
 } from "@chakra-ui/react";
-import LogoutButton from "./Logout";
-import LoginButton from "./Login";
 
 export const Navbar = () => {
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
@@ -29,11 +29,8 @@ export const Navbar = () => {
     <div className="Navbar">
       <div style={{ marginTop: "1%" }}>
         <Link to="/">
-
-         
-          <div className="SiteLogo" >
+          <div className="SiteLogo">
             <img src={logo} alt="Logo" />
-
           </div>
         </Link>
         <div
@@ -54,7 +51,11 @@ export const Navbar = () => {
                   // icon={<BsThreeDotsVertical />}
                   variant="solid"
                   w="fit-content"
-                  style={{ color: "white", marginLeft: "10px" }}
+                  style={{
+                    color: "white",
+                    marginLeft: "10px",
+                    fontSize: "17px",
+                  }}
                   // className="material-icons"
                 >
                   More Travel
@@ -164,7 +165,7 @@ export const Navbar = () => {
           );
         </div>
       </div>
-      <div style={{ marginTop: "1%", marginLeft: "2%" }}>
+      <div style={{ marginTop: "1%", marginLeft: "-1%" }}>
         <div>
           <h4>List your property</h4>
         </div>
@@ -174,7 +175,7 @@ export const Navbar = () => {
         <div>
           <h4>Trips</h4>
         </div>
-        <div style={{ marginLeft: "20px" }}>
+        <div style={{ marginLeft: "10px" }}>
           {isAuthenticated ? <LogoutButton /> : <LoginButton />}
         </div>
         <div>{isAuthenticated && <h4>Welcome, {user.name}</h4>}</div>
