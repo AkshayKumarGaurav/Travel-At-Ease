@@ -51,7 +51,7 @@ export const PaymentPage = () => {
 
     setTimeout(() => {
       navigate("/");
-    }, 3000);
+    }, 4000);
   };
 
   return (
