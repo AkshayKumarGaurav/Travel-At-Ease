@@ -63,7 +63,8 @@ dispatch({type:SEARCH_PLACE,payload:place})
           <Select placeholder="Going to" onChange={handleChange} isRequired>
             <option value="delhi">delhi</option>
             <option value="Bengaluru">Bengaluru</option>
-            <option value="hotels">hotels</option>
+            <option value="Pune">Pune</option>
+            <option value="Mumbai">Mumbai</option>
           </Select>
           <Input
             onChange={(e) => setDay1(e.target.value)}

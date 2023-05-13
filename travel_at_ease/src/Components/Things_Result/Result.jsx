@@ -11,7 +11,7 @@ export const Result = () => {
   let city=searchParams.get("city")
 
   useEffect(()=>{
-    axios.get(`http://localhost:8080/destination?city=${city}`).then((response) => {
+    axios.get(`https://travelatease.onrender.com/destination?city=${city}`).then((response) => {
         setCities(response.data)
      console.log(response.data)
     });
