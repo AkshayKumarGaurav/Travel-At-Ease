@@ -5,19 +5,39 @@ import { useDispatch, useSelector } from "react-redux";
 import { getHotels } from "../../redux/Hotels/action";
 import { useEffect } from "react";
 import { HotelList } from "./HotelList";
-import { Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { Spinner } from "@chakra-ui/react";
+import { SideBar } from "../../Components/SideBar";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 export const Hotels = () => {
+  let [searchParam] = useSearchParams();
   const dispatch = useDispatch();
-  const { isLoading, isError, hotels } = useSelector(
+  const { isLoading, isError, hotels, searchPlace } = useSelector(
     (store) => store.hotelsReducer
   );
-  // console.log(hotels)
 
+  // const store = useSelector((store) => store.hotelsReducer);
+  // console.log(store);
+
+  let service = searchParam.getAll("service");
+  let order=searchParam.get("order")
+// console.log(order)
+  let location = useLocation();
+  // console.log(location);
+
+  let obj = {
+    params: {
+      q: searchPlace,
+      service,
+      _sort: order && "price",
+      _order:order
+      
+    },
+  };
   useEffect(() => {
-    dispatch(getHotels);
-  }, []);
+    dispatch(getHotels(obj));
+  }, [location.search]);
 
   return isLoading ? (
     <div style={{ margin: "20%" }}>
@@ -38,8 +58,25 @@ export const Hotels = () => {
     </div>
   ) : (
     <div>
-      <Heading>Stays</Heading>
-      <HotelList hotels={hotels} />
+      <Box>
+        <Flex>
+          <Box
+            style={{
+              padding: "2%",
+              position: "fixed",
+              overflow: "hidden",
+              backgroundColor: "white",
+              // top: "0%",
+              height: "100%",
+            }}
+          >
+            <SideBar />
+          </Box>
+          <Box style={{ marginLeft: "15%" }}>
+            <HotelList hotels={hotels} />
+          </Box>
+        </Flex>
+      </Box>
     </div>
   );
 };

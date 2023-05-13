@@ -4,9 +4,6 @@ import { Box, Button, Flex, Heading, Tag, TagLabel, Text } from "@chakra-ui/reac
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { PaymentPage } from "./PaymentPage";
 import { TOTALPRICE } from "../redux/Hotels/actionType";
 
 
@@ -38,13 +35,13 @@ export const SingleHotelPage = () => {
             {data.name}
           </Heading>
           <Text color={"green"}>
-            <i class="fa-solid fa-check"></i>
+            <i className="fa-solid fa-check"></i>
             {"    "}Fully refundable
           </Text>
           <Heading as="h2" size="md">{`${data.rating}/10 Exceptional`}</Heading>
           <Text color={"green"}>
             {`See all ${data.review}`}
-            <i class="fa-solid fa-angles-right"></i>
+            <i className="fa-solid fa-angles-right"></i>
           </Text>
           <br></br>
           <br></br>
@@ -55,20 +52,20 @@ export const SingleHotelPage = () => {
           <Box>
             <Flex>
               <Box marginRight={"100px"}>
-                <Text><i class="fa-thin fa-fish"></i> Pool</Text>
-                <Text><i class="fa-solid fa-paw-simple"></i> Pet friendly</Text>
-                <Text><i class="fa-solid fa-spa"></i> Spa</Text>
-                <Text><i class="fa-solid fa-dumbbell"></i> Gym</Text>
-                <Text><i class="fa-solid fa-check"></i> Housekeeping</Text>
+                <Text><i className="fa-thin fa-fish"></i> Pool</Text>
+                <Text><i className="fa-solid fa-paw-simple"></i> Pet friendly</Text>
+                <Text><i className="fa-solid fa-spa"></i> Spa</Text>
+                <Text><i className="fa-solid fa-dumbbell"></i> Gym</Text>
+                <Text><i className="fa-solid fa-check"></i> Housekeeping</Text>
               </Box>
               <Box>
                 <Text>
-                  <i class="fa-solid fa-wifi"></i> Free WiFi
+                  <i className="fa-solid fa-wifi"></i> Free WiFi
                 </Text>
-                <Text><i class="fa-duotone fa-fan"></i> Air conditioning</Text>
-                <Text><i class="fa-solid fa-mug-hot"></i> Restaurant</Text>
-                <Text><i class="fa-solid fa-square-parking"></i> Parking available</Text>
-                <Text><i class="fa-sharp fa-solid fa-wine-glass"></i> Bar</Text>
+                <Text><i className="fa-duotone fa-fan"></i> Air conditioning</Text>
+                <Text><i className="fa-solid fa-mug-hot"></i> Restaurant</Text>
+                <Text><i className="fa-solid fa-square-parking"></i> Parking available</Text>
+                <Text><i className="fa-sharp fa-solid fa-wine-glass"></i> Bar</Text>
               </Box>
             </Flex>
           </Box>

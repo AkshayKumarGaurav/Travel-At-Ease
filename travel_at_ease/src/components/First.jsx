@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import styles from "./First.module.css";
 import { Box } from "@chakra-ui/react";
