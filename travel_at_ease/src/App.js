@@ -1,9 +1,11 @@
 /** @format */
 
 
-import { Navbar } from './Components/Navbar';
+
 import { MainRoutes } from './Components/MainRoutes';
 import Footer from './Components/Footer';
+import { Navbar } from './Components/Navbar';
+
 
 function App() {
   return (
