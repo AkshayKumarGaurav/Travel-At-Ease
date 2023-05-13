@@ -6,7 +6,7 @@ export const getHotels =(obj)=> (dispatch) => {
     dispatch({ type: GETHOTELS_REQUEST });
     axios.get(`http://localhost:8080/hotels`,obj).then((res) => {
       dispatch({ type: GETHOTELS_SUCCESS, payload: res.data });
-      // console.log(res.data);
+      // console.log(res);
     }).catch((err)=>{
       dispatch({type:GETHOTELS_FAILURE})
     })

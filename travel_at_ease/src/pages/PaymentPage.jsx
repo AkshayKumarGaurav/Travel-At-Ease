@@ -29,12 +29,18 @@ export const PaymentPage = () => {
 
   let navigate = useNavigate();
 
-  const { isLoading, isError, hotels, price, days } = useSelector(
+  const { isLoading, isError, hotels, price, days, rooms } = useSelector(
     (store) => store.hotelsReducer
   );
-  let texes = Math.floor((price * days * 18) / 100);
+
+  let subPrice = price * rooms;
+
+  const store = useSelector((store) => store);
+  console.log(store);
+
+  let texes = Math.floor((subPrice * days * 18) / 100);
   let resortFee = days * 199;
-  let totalFee = price * days + texes + resortFee;
+  let totalFee = subPrice * days + texes + resortFee;
 
   let handleChange = (e) => {
     let { name, value } = e.target;
@@ -80,7 +86,7 @@ export const PaymentPage = () => {
           </Box>
           <br />
 
-          <Box>
+          <Box style={{ textAlign: "center" }}>
             <Heading size={"md"}>Payment method</Heading>
             <Text color={"green"}>
               UPI | PayPal | Monthly Payment | Click-to-Pay
@@ -146,6 +152,7 @@ export const PaymentPage = () => {
                 <label for="cvv">CVV:</label>
                 <br />
                 <input
+                  maxlength="4"
                   required
                   onChange={handleChange}
                   type="number"
@@ -163,7 +170,8 @@ export const PaymentPage = () => {
                   type="number"
                   id="amount"
                   name="amount"
-                  value={input.amount}
+                  // value={input.amount}
+                  value={Math.floor((totalFee * 80) / 100)}
                 />
                 <br />
 
@@ -200,12 +208,14 @@ export const PaymentPage = () => {
           <Box>
             <Flex>
               <Box marginLeft={"20px"} marginRight={"40px"}>
-                <Text color={"white"}>{`1 room * ${days} nights`}</Text>
-                <Text color={"white"}>{`₹ ${price}.00 average per night`}</Text>
+                <Text color={"white"}>{`${rooms} room * ${days} nights`}</Text>
+                <Text
+                  color={"white"}
+                >{`$ ${subPrice}.00 average per night`}</Text>
               </Box>
               <Box>
-                <Heading size={"lg"} color={"white"}>{`₹ ${
-                  price * days
+                <Heading size={"lg"} color={"white"}>{`$ ${
+                  subPrice * days
                 }.00`}</Heading>
               </Box>
             </Flex>
@@ -217,16 +227,16 @@ export const PaymentPage = () => {
                 <Text marginRight={"120px"} color={"white"}>
                   Taxes and fees @18%{" "}
                 </Text>
-                <Text color="white">{`₹ ${texes}.00`}</Text>
+                <Text color="white">{`$ ${texes}.00`}</Text>
               </Flex>
             </Box>
 
             <Box marginLeft={"20px"}>
               <Flex>
                 <Text marginRight={"100px"} color={"white"}>
-                  Resort fee ₹199 per night{" "}
+                  Resort fee $199 per night{" "}
                 </Text>
-                <Text color="white">{`₹ ${resortFee}.00`}</Text>
+                <Text color="white">{`$ ${resortFee}.00`}</Text>
               </Flex>
             </Box>
             <br />
@@ -236,7 +246,7 @@ export const PaymentPage = () => {
                 <Heading marginRight={"100px"} color={"white"}>
                   Total
                 </Heading>
-                <Heading color={"white"}>{`₹ ${totalFee}.00`}</Heading>
+                <Heading color={"white"}>{`$ ${totalFee}.00`}</Heading>
               </Flex>
             </Box>
             <Box marginLeft={"20px"}>
@@ -249,7 +259,7 @@ export const PaymentPage = () => {
                 >
                   Pay Now @80%
                 </Heading>
-                <Heading as="h4" size="sm" color={"white"}>{`₹ ${Math.floor(
+                <Heading as="h4" size="sm" color={"white"}>{`$ ${Math.floor(
                   (totalFee * 80) / 100
                 )}.00`}</Heading>
               </Flex>
@@ -264,7 +274,7 @@ export const PaymentPage = () => {
                 >
                   Pay at property @20%
                 </Heading>
-                <Heading as="h4" size="sm" color={"white"}>{`₹ ${Math.floor(
+                <Heading as="h4" size="sm" color={"white"}>{`$ ${Math.floor(
                   (totalFee * 20) / 100
                 )}.00`}</Heading>
               </Flex>
