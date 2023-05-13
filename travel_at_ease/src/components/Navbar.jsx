@@ -1,11 +1,11 @@
 import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
-import { useToast } from "@chakra-ui/react";
+import { Box, useToast } from "@chakra-ui/react";
 import { useAuth0 } from "@auth0/auth0-react";
 import logo from "../Images/logo2.png";
-import LoginButton from "./LoginButton";
-import LogoutButton from "./LogoutButton";
+// import LoginButton from "./LoginButton";
+// import LogoutButton from "./LogoutButton";
+
 
 import {
   Popover,
@@ -18,11 +18,10 @@ import {
   Stack,
   Flex,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
-  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
-
-  console.log("isAuthenticated", isAuthenticated);
+ 
 
   const toast = useToast();
   return (
@@ -176,9 +175,11 @@ export const Navbar = () => {
           <h4>Trips</h4>
         </div>
         <div style={{ marginLeft: "10px" }}>
-          {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+        <Box color={"white"} padding={' 0px 13px'} fontWeight={'600'} >
+                SignIn
+            </Box>
+        
         </div>
-        <div>{isAuthenticated && <h4>Welcome, {user.name}</h4>}</div>
       </div>
     </div>
   );

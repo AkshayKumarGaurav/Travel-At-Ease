@@ -10,7 +10,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-export default function Placecard({image,title,price,desc}) {
+export default function Placecard({image,title,price,desc,type,time}) {
   return (
     <Center py={6}>
       <Box
@@ -54,6 +54,10 @@ export default function Placecard({image,title,price,desc}) {
             <Text color={'gray.500'}>
             per traveller
           </Text>
+          <Text color={'gray.500'}>
+            {type}
+          </Text>
+          <h4>Duration of Trip :- {time}</h4>
           
         </Stack>
         <Stack mt={6} direction={'row'} spacing={4} align={'center'}>

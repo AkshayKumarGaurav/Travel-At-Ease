@@ -4,12 +4,14 @@ import thunk from "redux-thunk"
 import { reducer as productReducer } from "./productReducer/reducer";
 import { hotelsReducer } from "./Hotels/hotelReducer";
 import { reducer as flightReducer } from "./flightReducer/reducer";
+import { LoginReducer } from "./Authantication/auth.reducer";
 
 
 const rootReducer = combineReducers({
     productReducer,
     hotelsReducer,
-    flightReducer
+    flightReducer,
+    LoginReducer
 })
 
 

@@ -8,6 +8,8 @@
     "@chakra-ui/react": "^2.5.4",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@firebase/auth": "^0.21.6",
+    "firebase": "^9.19.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
@@ -28,9 +30,11 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.1.2",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
     "styled-components": "^5.3.9",
+    "sweetalert2": "^11.7.5",
     "thunk": "^0.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -58,5 +62,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "."
 }
