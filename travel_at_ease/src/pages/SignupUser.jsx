@@ -13,19 +13,21 @@ import {
     Heading,
     Text,
     useColorModeValue,
-    Link,
+   
   } from "@chakra-ui/react";
   import { useState } from "react";
   import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
+import axios from "axios";
   
   const obj = {
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
   };
   
-  export default function SignupCard() {
+  export default function SignupUser() {
     const [showPassword, setShowPassword] = useState(false);
   
     const [formData, setFormData] = useState(obj);
@@ -39,10 +41,13 @@ import {
     const handleSubmit = (e) => {
       e.preventDefault();
   
-      // axios
-      //   .post(`https://electro-emporium.cyclic.app/user/auth/register`, formData)
-      //   .then((res) => console.log(res.data))
-      //   .catch((err)=>console.log(err.response.data))
+      axios
+        .post(`https://doubtful-overcoat-pig.cyclic.app/register`, formData)
+        .then((res) => {
+            alert("new user has been created")
+            console.log(res.data)
+        })
+        .catch((err)=>console.log(err))
   
       console.log(formData);
       setFormData(obj);
@@ -78,9 +83,9 @@ import {
                     <FormControl id="firstName" isRequired>
                       <FormLabel>First Name</FormLabel>
                       <Input type="text"
-                       name="firstname"
+                       name="firstName"
                        onChange={handleChange}
-                       value={formData.firstname}
+                       value={formData.firstName}
                       />
                     </FormControl>
                   </Box>
@@ -88,9 +93,9 @@ import {
                     <FormControl id="lastName">
                       <FormLabel>Last Name</FormLabel>
                       <Input type="text" 
-                        name="lastname"
+                        name="lastName"
                         onChange={handleChange}
-                        value={formData.lastname}
+                        value={formData.lastName}
                       />
                     </FormControl>
                   </Box>
@@ -140,7 +145,7 @@ import {
                 </Stack>
                 <Stack pt={6}>
                   <Text align={"center"}>
-                    Already a user? <Link color={"blue.400"}>Login</Link>
+                    Already a user? <Link to ={"/login"} color={"blue.400"}>Login</Link>
                   </Text>
                 </Stack>
               </form>

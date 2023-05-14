@@ -2,7 +2,7 @@
 
 
 
-import { MainRoutes } from './Components/MainRoutes';
+import { MainRoutes } from './Components/AllRoutes/MainRoutes';
 import Footer from './Components/Footer';
 import { Navbar } from './Components/Navbar';
 
