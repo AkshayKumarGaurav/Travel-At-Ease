@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import "./Navbar.css";
 import { Box, useToast } from "@chakra-ui/react";
@@ -5,7 +7,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import logo from "../Images/logo2.png";
 // import LoginButton from "./LoginButton";
 // import LogoutButton from "./LogoutButton";
-
 
 import {
   Popover,
@@ -17,13 +18,20 @@ import {
   Button,
   Stack,
   Flex,
+  Text,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import Login from "../pages/LoginUser";
+import { useDispatch, useSelector } from "react-redux";
+import { LOGOUT_USER } from "../redux/Authantication/auth.actionType";
 
 export const Navbar = () => {
- 
+  let { isAuth, isError, isLoading, user } = useSelector(
+    (store) => store.LoginReducer
+  );
 
-  const toast = useToast();
+  let dispatch=useDispatch();
+
   return (
     <div className="Navbar">
       <div style={{ marginTop: "1%" }}>
@@ -175,10 +183,22 @@ export const Navbar = () => {
           <h4>Trips</h4>
         </div>
         <div style={{ marginLeft: "10px" }}>
-        <Box color={"white"} padding={' 0px 13px'} fontWeight={'600'} >
-                SignIn
+          <Box>
+         <Flex>
+         <Box>
+              {isAuth ? (
+                <Box color={"white"} padding={" 0px 13px"} fontWeight={"600"}>
+                  {user}
+                </Box>
+              ) : (
+                <Box color={"white"} padding={" 0px 13px"} fontWeight={"600"}>
+                  <Link to={"/login"}>Login/signup</Link>
+                </Box>
+              )}
             </Box>
-        
+            <Box>{isAuth && <Button onClick={()=>dispatch({type:LOGOUT_USER})} colorScheme="red">Logout</Button>}</Box>
+         </Flex>
+          </Box>
         </div>
       </div>
     </div>
