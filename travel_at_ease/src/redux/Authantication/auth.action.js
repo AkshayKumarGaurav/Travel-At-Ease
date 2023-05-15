@@ -13,9 +13,10 @@ import {
 } from "./auth.actionType";
 
 export let login = (userData) => (dispatch) => {
+  
   dispatch({ type: LOGIN_REQUEST });
   axios
-    .post(`https://doubtful-overcoat-pig.cyclic.app/login`, userData)
+    .post(`https://doubtful-overcoat-pig.cyclic.app/login/`, userData)
     .then((res) => {
       // localStorage.setItem("token",res.data.token)
       console.log(res.data)
