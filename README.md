@@ -15,10 +15,6 @@ This website is a clone of Orbitz, where user can book hotels,flights and places
    <h1>Single Product-Page</h1>
      
    <h1>Cart-Page</h1>
-     
-   <h1>Admin-Page</h1>
-   
-   <h1>Admin Products Page</h1>
     
    <h1>Checkout Page</h1>
    
