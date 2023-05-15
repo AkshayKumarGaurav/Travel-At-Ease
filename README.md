@@ -34,7 +34,6 @@ This website is a clone of Orbitz, where user can book hotels,flights and places
     <ul>
         <li>React</li>
         <li>Redux</li>
-         <li>Mongodb</li>
         <li>Chakra UI </li>
         </ul>
         <h1>Creators</h1>
