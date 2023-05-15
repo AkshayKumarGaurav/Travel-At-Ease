@@ -23,7 +23,7 @@ This website is a clone of Orbitz, where user can book hotels,flights and places
     <p>If you want to run our project in your local machine</p>
     <p>Follow the given steps:</p>
     <ul>
-        <li>Clone our respository <a href="https://github.com/RutuvikP/shiny-blade-5949.git">https://github.com/RutuvikP/shiny-blade-5949.git</a></li>
+        <li>Clone our respository <a href="https://github.com/AkshayKumarGaurav/paltry-rain-9292.git">https://github.com/AkshayKumarGaurav/paltry-rain-9292.git</a></li>
         <li>Open our code in VS code </li>
  <li>Then do npm install</li>
         <li>Then Initialize the server by writing 'npm run start' on Terminal</li>
