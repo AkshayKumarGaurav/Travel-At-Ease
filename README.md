@@ -1,6 +1,6 @@
 # Travel At Ease
 
-This website is a clone of Orbitz, where user can book hotels,flights and places where can visit in any specific place by going in Thing ToDo page. 
+This website is a clone of Orbitz, where user can book hotels, flights and users can also find some special/famous places in a city, where they should go and it is done by just checking our Thing To Do page. 
 
 <h3>Live Demo Link https://travelatease.netlify.app/ </h3>
 
