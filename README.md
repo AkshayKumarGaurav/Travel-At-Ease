@@ -5,6 +5,7 @@ This website is a clone of Orbitz, where user can book hotels,flights and places
 <h3>Live Demo Link https://travelatease.netlify.app/ </h3>
 
 <h1>Home Page</h1>
+
 ![Screenshot (1984)](https://github.com/AkshayKumarGaurav/paltry-rain-9292/assets/107463268/c6f0fddc-e1d3-4aba-a190-b4f23b99299f)
 
  
