@@ -12,8 +12,6 @@ import {
 } from "./auth.actionType";
 
 const initialState = {
-  // activeUser: JSON.parse(localStorage.getItem('MkuserData')) || {},
-  // isAuth: JSON.parse(localStorage.getItem('MkisAuth')) || false,
   isAuth: false,
   isError: false,
   isLoading: false,
@@ -39,39 +37,6 @@ export const LoginReducer = (state = initialState, { type, payload }) => {
     case REGISTER_ERROR: {
       return { ...state, isLoading: false, isError: true };
     }
-    // case REGISTER_REQUEST:
-    //   return { ...state, isLoading: (state.isLoading = true) };
-    // case REGISTER_SUCCESSFUL:
-    //   return {
-    //     ...state,
-    //     isActive: (state.isActive = true),
-    //     isLoading: (state.isLoading = false),
-    //     activeUser: (state.activeUser = payload),
-    //   };
-    // case REGISTER_ERROR:
-    //   return {
-    //     ...state,
-    //     isLoading: (state.isLoading = false),
-    //     isError: (state.isError = true),
-    //   };
-
-    // case GET_USERS:
-    //   return {
-    //     ...state,
-    //     isLoading: (state.isLoading = false),
-    //     isError: (state.isError = false),
-    //     user: (state.user = payload),
-    //   };
-
-    // case LOGOUT_USER:
-    //   return {
-    //     ...state,
-    //     isLoading: (state.isLoading = false),
-    //     isError: (state.isError = false),
-    //     activeUser: (state.activeUser = {}),
-    //     isAuth: (state.isActive = false),
-    //   };
-
     default:
       return state;
   }

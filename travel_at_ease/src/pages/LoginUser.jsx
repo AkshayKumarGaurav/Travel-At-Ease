@@ -31,12 +31,12 @@ export default function Login() {
   let dispatch = useDispatch();
   let navigate = useNavigate();
   let location = useLocation();
-  console.log(location);
+  // console.log(location);
 
   let { isAuth, isError, isLoading, user } = useSelector(
     (store) => store.LoginReducer
   );
-  console.log(isAuth, user);
+  // console.log(isAuth, user);
   if (isAuth) {
     navigate(location.state, { replace: true });
   }

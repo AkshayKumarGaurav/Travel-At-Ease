@@ -2,8 +2,7 @@
 
 import React from "react";
 import "./Navbar.css";
-import { Box, useToast } from "@chakra-ui/react";
-import { useAuth0 } from "@auth0/auth0-react";
+import { Box } from "@chakra-ui/react";
 import logo from "../Images/logo2.png";
 // import LoginButton from "./LoginButton";
 // import LogoutButton from "./LogoutButton";
@@ -31,6 +30,21 @@ export const Navbar = () => {
   );
 
   let dispatch=useDispatch();
+
+
+  let obj={
+    firstName:'',
+    msg:'',
+    token:''
+  }
+  
+  let {firstName,msg,token}=JSON.parse(localStorage.getItem("user"))|| obj
+
+
+  let handleLogout=()=>{
+  localStorage.removeItem("user")
+    dispatch({type:LOGOUT_USER})
+  }
 
   return (
     <div className="Navbar">
@@ -186,9 +200,9 @@ export const Navbar = () => {
           <Box>
          <Flex>
          <Box>
-              {isAuth ? (
+              {token ? (
                 <Box color={"white"} padding={" 0px 13px"} fontWeight={"600"}>
-                  {user}
+                  {firstName}
                 </Box>
               ) : (
                 <Box color={"white"} padding={" 0px 13px"} fontWeight={"600"}>
@@ -196,7 +210,7 @@ export const Navbar = () => {
                 </Box>
               )}
             </Box>
-            <Box>{isAuth && <Button onClick={()=>dispatch({type:LOGOUT_USER})} colorScheme="red">Logout</Button>}</Box>
+            <Box>{token && <Button onClick={handleLogout} colorScheme="red">Logout</Button>}</Box>
          </Flex>
           </Box>
         </div>

@@ -18,7 +18,7 @@ export let login = (userData) => (dispatch) => {
   axios
     .post(`https://doubtful-overcoat-pig.cyclic.app/login/`, userData)
     .then((res) => {
-      // localStorage.setItem("token",res.data.token)
+      localStorage.setItem("user",JSON.stringify(res.data))
       console.log(res.data)
       alert(`Walcome Back ${res.data.firstName}` )
       dispatch({ type: LOGIN_SUCCESSFUL, payload: res.data.firstName });
