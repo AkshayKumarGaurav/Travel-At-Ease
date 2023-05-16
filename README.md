@@ -6,7 +6,6 @@ This website is a clone of Orbitz, where user can book hotels,flights and places
 
 <h1>Home Page</h1>
  <a href='https://postimg.cc/r02JMG1v' target='_blank'><img src='https://i.postimg.cc/1tfY0Jf5/Screenshot-1984.png' border='0' alt='Screenshot-1984'/></a>
-
   <h1>Signup Page </h1>
   <a href='https://postimg.cc/QV20b3KX' target='_blank'><img src='https://i.postimg.cc/c4H2d1s8/Screenshot-1987.png' border='0' alt='Screenshot-1987'/></a>
   <h1>Products-Page</h1>
