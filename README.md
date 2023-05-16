@@ -8,6 +8,7 @@ This website is a clone of Orbitz, where user can book hotels, flights and users
 ![Screenshot (1984)](https://github.com/AkshayKumarGaurav/paltry-rain-9292/assets/107463268/c6f0fddc-e1d3-4aba-a190-b4f23b99299f)
 
 # Signup Page 
+
 ![Screenshot (1988)](https://github.com/AkshayKumarGaurav/paltry-rain-9292/assets/107463268/523dc897-94ef-46f6-b73c-dd14cf7d860d)
 
 # Login Page
