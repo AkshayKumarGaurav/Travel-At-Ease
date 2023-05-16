@@ -5,15 +5,14 @@ This website is a clone of Orbitz, where user can book hotels,flights and places
 <h3>Live Demo Link https://travelatease.netlify.app/ </h3>
 
 <h1>Home Page</h1>
- 
+ <a href='https://postimg.cc/r02JMG1v' target='_blank'><img src='https://i.postimg.cc/1tfY0Jf5/Screenshot-1984.png' border='0' alt='Screenshot-1984'/></a>
 
   <h1>Signup Page </h1>
-  
-    
+  <a href='https://postimg.cc/QV20b3KX' target='_blank'><img src='https://i.postimg.cc/c4H2d1s8/Screenshot-1987.png' border='0' alt='Screenshot-1987'/></a>
   <h1>Products-Page</h1>
-
+   <a href='https://postimg.cc/rdBhz2kZ' target='_blank'><img src='https://i.postimg.cc/Qttv4jnD/Screenshot-1985.png' border='0' alt='Screenshot-1985'/></a>
    <h1>Single Product-Page</h1>
-     
+    <a href='https://postimg.cc/dDp8YjJn' target='_blank'><img src='https://i.postimg.cc/X77x9smM/Screenshot-1986.png' border='0' alt='Screenshot-1986'/></a>
    <h1>Cart-Page</h1>
     
    <h1>Checkout Page</h1>
