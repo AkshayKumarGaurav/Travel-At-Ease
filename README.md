@@ -16,13 +16,13 @@ This website is a clone of Orbitz, where user can book hotels,flights and places
 # Hotels-Page
 ![Screenshot (1985)](https://github.com/AkshayKumarGaurav/paltry-rain-9292/assets/107463268/2e0a16f5-63c3-4b6e-93cb-f425e94c0efb)
 
-#Single Page
+# Single Page
 ![Screenshot (1986)](https://github.com/AkshayKumarGaurav/paltry-rain-9292/assets/107463268/a1b76edd-8daa-4e74-9305-1116e79e3bad)
 
-#Things ToDo Page
+# Things ToDo Page
 ![Screenshot (1990)](https://github.com/AkshayKumarGaurav/paltry-rain-9292/assets/107463268/32f11b4d-812e-4666-9d3a-362f423ac51a)
 
-#Flight Page
+# Flight Page
 ![Screenshot (1989)](https://github.com/AkshayKumarGaurav/paltry-rain-9292/assets/107463268/153e4b61-9140-41ef-bafa-a748b8101a34)
 
 # Checkout Page
