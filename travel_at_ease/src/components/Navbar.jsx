@@ -2,7 +2,7 @@
 
 import React from "react";
 import "./Navbar.css";
-import { Box } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 import logo from "../Images/logo2.png";
 // import LoginButton from "./LoginButton";
 // import LogoutButton from "./LogoutButton";
@@ -23,11 +23,14 @@ import { Link } from "react-router-dom";
 import Login from "../pages/LoginUser";
 import { useDispatch, useSelector } from "react-redux";
 import { LOGOUT_USER } from "../redux/Authantication/auth.actionType";
+import { useToast } from '@chakra-ui/react'
 
 export const Navbar = () => {
   let { isAuth, isError, isLoading, user } = useSelector(
     (store) => store.LoginReducer
   );
+
+let toast=useToast()
 
   let dispatch=useDispatch();
 
@@ -42,6 +45,14 @@ export const Navbar = () => {
 
 
   let handleLogout=()=>{
+    toast({
+      title: 'thanks for visiting.',
+      position: 'top',
+      description: "You have logged out successfully.",
+      status: 'success',
+      duration: 1500,
+      isClosable: true,
+    })
   localStorage.removeItem("user")
     dispatch({type:LOGOUT_USER})
   }
@@ -206,8 +217,12 @@ export const Navbar = () => {
                 </Box>
               ) : (
                 <Box color={"white"} padding={" 0px 13px"} fontWeight={"600"}>
-                  <Link to={"/login"}>Login/signup</Link>
+                <HStack spacing={'20px'}>
+                <Button isDisabled={token==true} border={'1px solid '} bg={'none'}><Link to={"/login"}>Login</Link></Button>
+                 <Button border={'1px solid'} bg={'none'}> <Link to={"/signup"}>Signup</Link></Button>
+                </HStack>
                 </Box>
+                
               )}
             </Box>
             <Box>{token && <Button onClick={handleLogout} colorScheme="red">Logout</Button>}</Box>

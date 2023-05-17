@@ -11,6 +11,7 @@ import {
   Stack,
   Image,
   Spinner,
+  useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
 
@@ -27,7 +28,7 @@ const obj = {
 
 export default function Login() {
   const [formData, setFormData] = useState(obj);
-
+let toast=useToast()
   let dispatch = useDispatch();
   let navigate = useNavigate();
   let location = useLocation();
@@ -36,6 +37,7 @@ export default function Login() {
   let { isAuth, isError, isLoading, user } = useSelector(
     (store) => store.LoginReducer
   );
+  let myUser=JSON.parse(localStorage.getItem("user"))
   // console.log(isAuth, user);
   if (isAuth) {
     navigate(location.state, { replace: true });
@@ -50,7 +52,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(login(formData));
+    dispatch(login(formData,toast));
 
     setFormData(obj);
   };
@@ -76,7 +78,7 @@ export default function Login() {
       <Flex p={8} flex={1} align={"center"} justify={"center"}>
         <form onSubmit={handleSubmit}>
           <Stack spacing={4} w={"full"} maxW={"md"}>
-            <Heading fontSize={"2xl"}>Sign in to your account</Heading>
+            <Heading fontSize={"2xl"}>Login to your account</Heading>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
               <Input
@@ -106,9 +108,9 @@ export default function Login() {
                 <Checkbox>Remember me</Checkbox>
                 <Link color={"blue.500"}>Forgot password?</Link>
               </Stack>
-              <Link to="/signup" color={"teal"}>Create a free account?  </Link>
-              <Button colorScheme={"blue"} variant={"solid"} type="submit">
-                Sign in
+              {/* <Link to="/signup" color={"teal"}>Create a free account?  </Link> */}
+              <Button isDisabled={myUser?.firstName}  colorScheme={"blue"} variant={"solid"} type="submit">
+                Login
               </Button>
             </Stack>
           </Stack>

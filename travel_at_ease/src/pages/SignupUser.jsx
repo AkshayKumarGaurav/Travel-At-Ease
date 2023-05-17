@@ -15,6 +15,7 @@ import {
   Text,
   useColorModeValue,
   Spinner,
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
@@ -37,6 +38,7 @@ export default function SignupUser() {
   const [formData, setFormData] = useState(obj);
 
   let dispatch = useDispatch();
+  let toast=useToast()
 
   let { isAuth, isError, isLoading, user } = useSelector(
     (store) => store.LoginReducer
@@ -58,7 +60,15 @@ export default function SignupUser() {
       .post(`https://doubtful-overcoat-pig.cyclic.app/register/`, formData)
       .then((res) => {
         dispatch({ type: REGISTER_SUCCESSFUL });
-        alert("new user has been created");
+        // alert("new user has been created");
+        toast({
+          title: `${formData?.firstName} your Account has been created`,
+          position: 'top',
+          description: " Now you can login.",
+          status: 'success',
+          duration: 2500,
+          isClosable: true,
+        })
         console.log(res.data);
       })
       .catch((err) => {
