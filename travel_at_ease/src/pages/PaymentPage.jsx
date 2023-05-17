@@ -1,6 +1,6 @@
 /** @format */
 import "./paymentPage.css";
-import { Spinner } from "@chakra-ui/react";
+import { Spinner, useToast } from "@chakra-ui/react";
 import {
   Box,
   Button,
@@ -11,7 +11,11 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+
 import { useNavigate } from "react-router-dom";
+import { OtpModel } from "./OtpModel";
+
+
 
 let obj = {
   name: "",
@@ -27,11 +31,28 @@ export const PaymentPage = () => {
   let [spin, setSpin] = useState(false);
   let [summit, setSummit] = useState(false);
 
+  let toast=useToast()
+
+  let [otp,setOtp]=useState("")
   let navigate = useNavigate();
 
   const { isLoading, isError, hotels, price, days, rooms } = useSelector(
     (store) => store.hotelsReducer
+
   );
+
+  let user=JSON.parse(localStorage.getItem("user"))
+
+  // *****function of OTP******//
+  // let getOTP= ()=>{
+  //   let otp='';
+  // let length=4;
+  
+  // for(let i=0;i<length;i++){
+  //   otp+=Math.floor(Math.random()*10)
+  // }
+  //  setOtp(otp)
+  // }
 
   let subPrice = price * rooms;
 
@@ -48,16 +69,25 @@ export const PaymentPage = () => {
   };
   let handleSubmit = (e) => {
     e.preventDefault();
-    setInput(obj);
+    // setInput(obj);
     setSpin(true);
+    // getOTP()
     setTimeout(() => {
       setSpin(false);
       setSummit(true);
+      toast({
+        title: `Thanks ${user?.firstName}`,
+        position: 'top',
+        description: "your payment has been done successfully.",
+        status: 'success',
+        duration: 2500,
+        isClosable: true,
+      })
     }, 2000);
 
     setTimeout(() => {
       navigate("/");
-    }, 3000);
+    }, 3500);
   };
 
   return (
@@ -111,7 +141,7 @@ export const PaymentPage = () => {
                   size="xl"
                 />
               )}
-              {summit && <Heading color={"green"}>Submited successful</Heading>}
+              {/* {summit && <Heading color={"green"}>Submited successful</Heading>} */}
               <form onSubmit={handleSubmit}>
                 <label for="name">Name on Card:</label>
                 <br />
@@ -187,7 +217,10 @@ export const PaymentPage = () => {
                 />
                 <br />
                 <br />
-                <button type="submit">Submit</button>
+                <button type="submit">submit</button>
+               
+               
+                
               </form>
             </div>
             {/* form is ended */}
